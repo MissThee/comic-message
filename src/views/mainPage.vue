@@ -145,7 +145,7 @@ const exportGif = async () => {
   const gif = new GIF({
     workers: 2,
     quality: 10,
-    workerScript: (import.meta.env.DEV? '':'/comic-message')+ '/gif.worker.js'
+    workerScript: (import.meta.env?.DEV? '':'/comic-message')+ '/gif.worker.js'
   })
   gif.addFrame(await getImageData())
   gif.addFrame(await getImageData(), { delay: 200 })
